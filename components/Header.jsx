@@ -15,10 +15,11 @@ const Header = () => {
       </Link>
 
       {/* desktop nav */}
-      <div className="hidden xl:flex item-center gap-8">
+      <div className="hidden xl:flex items-center gap-8">
         <Nav />
         <Link href="http://wa.me/5511991007079">
-          <Button className="capitalize font-medium hover:text-accent translation-all">Olá!</Button>
+          {/* <Button className="capitalize font-medium hover:text-accent translation-all">Olá!</Button> */}
+          <Button>Olá!</Button>
         </Link>
       </div>
 
