@@ -217,7 +217,7 @@ const About = () => {
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
                           <TooltipTrigger>
-                            <ScrollArea key={index} className="h-[250px] w-full text-center xl:text-left">
+                            <ScrollArea key={item.index} className="h-[250px] w-full text-center xl:text-left">
                               <div className="max-w-[98%]">
                                 <p>
                                   {item.primary}
@@ -243,7 +243,7 @@ const About = () => {
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {resume.info.map((item, index) => {
                     return (
-                      <li key={index} className="flex items-center justify-center xl:justify-start gap-3">
+                      <li key={resume.index} className="flex items-center justify-center xl:justify-start gap-3">
                         <span className="text-white/60">{item.fieldName}</span>
                         <a href={item.href} className={`${item.href != "" ? 'hover:text-accent' : 'pointer-events-none cursor-default'}`}>{item.fieldValue}</a>
                       </li>
@@ -269,7 +269,7 @@ const About = () => {
                   <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                     {skills.skillList.map((skill, index) => {
                       return (
-                        <li key={index}>
+                        <li key={skills.index}>
                           <TooltipProvider delayDuration={100}>
                             <Tooltip>
 
@@ -310,7 +310,7 @@ const About = () => {
                     {education.items.map((item, index) => {
                       return (
                         <li
-                          key={index}
+                          key={education.index}
                           className="bg-[#232329] h-[235px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">
@@ -349,7 +349,7 @@ const About = () => {
                     {experience.items.map((item, index) => {
                       return (
                         <li
-                          key={index}
+                          key={experience.index}
                           className="bg-[#232329] h-[235px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">
