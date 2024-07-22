@@ -28,6 +28,7 @@ const Photo = () => {
             fill
             alt="Ariel Spencer Desenvolvedor Front-End"
             className="object-contain"
+            sizes="298px"
           />
         </motion.div>
         <motion.svg

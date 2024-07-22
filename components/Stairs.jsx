@@ -12,18 +12,18 @@ const stairAnimation = {
   },
 }
 
-const reverseIndex = (index) => {
+const reverseIndex = (stairs) => {
   const totalSteps = 8;
-  return totalSteps - index - 1;
+  return totalSteps - stairs - 1;
 }
 
 const Stairs = () => {
   return (
     <>
-      {[...Array(8)].map((_, index) => {
+      {[...Array(8)].map((_, stairs) => {
         return (
           <motion.div
-            key={index}
+            key={stairs}
             variants={stairAnimation}
             initial="initial"
             animate="animate"
@@ -31,7 +31,7 @@ const Stairs = () => {
             transition={{
               duration: 0.4,
               ease: 'easeInOut',
-              delay: reverseIndex(index) * 0.1,
+              delay: reverseIndex(stairs) * 0.1,
             }}
             className="h-full w-full bg-[#232329] relative"
           />
