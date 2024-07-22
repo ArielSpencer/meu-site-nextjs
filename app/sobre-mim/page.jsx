@@ -247,8 +247,8 @@ const About = () => {
                       <TooltipProvider key={description.id} delayDuration={100}>
                         <Tooltip>
                           <TooltipTrigger>
-                            <ScrollArea className="h-[250px] w-full text-center xl:text-left">
-                              <div className="max-w-[98%]">
+                            <ScrollArea className="xl:h-[250px] w-full text-center xl:text-left cursor-text">
+                              <div className="max-w-[98%] select-text">
                                 <p>
                                   {description.primary}
                                 </p>
@@ -262,7 +262,7 @@ const About = () => {
                             </ScrollArea>
                           </TooltipTrigger>
 
-                          <TooltipContent>
+                          <TooltipContent className="hidden xl:block">
                             <p>{resume.tip}</p>
                           </TooltipContent>
                         </Tooltip>
@@ -297,7 +297,7 @@ const About = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ScrollArea className="h-[600px]">
+                <ScrollArea className="xl:h-[600px]">
                   <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                     {skills.skillList.map((skill) => {
                       return (
@@ -337,7 +337,7 @@ const About = () => {
                 <p className='text-white/60 mx-auto xl:mx-0'>
                   {education.description}
                 </p>
-                <ScrollArea className="h-[600px]">
+                <ScrollArea className="xl:h-[600px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((education) => {
                       return (
@@ -376,7 +376,7 @@ const About = () => {
                 <p className='text-white/60 mx-auto xl:mx-0'>
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[600px]">
+                <ScrollArea className="xl:h-[600px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((experience) => {
                       return (
