@@ -275,7 +275,7 @@ const About = () => {
                     return (
                       <li key={info.id} className="flex items-center justify-center xl:justify-start gap-3">
                         <span className="text-white/60">{info.fieldName}</span>
-                        <a href={info.href} className={`${info.href != "" ? 'hover:text-accent' : 'pointer-events-none cursor-default'}`}>
+                        <a href={info.href} className={`${info.href != "" ? 'hover:text-accent cursor-pointer' : 'pointer-events-none cursor-default'}`}>
                           {info.fieldValue}
                         </a>
                       </li>
