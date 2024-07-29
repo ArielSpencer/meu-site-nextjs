@@ -1,11 +1,13 @@
 "use client"
 
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
 
 const info = [
   {
@@ -32,6 +34,40 @@ const info = [
 ]
 
 const Contact = () => {
+  const [firstName, setFirstName] = useState('');
+  const [company, setCompany] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('');
+  const [message, setMessage] = useState('');
+
+  const sendEmail = (event) => {
+    event.preventDefault();
+
+    const templateParams = {
+      from_name: firstName,
+      company: company,
+      email: email,
+      phone: phone,
+      service: service,
+      message: message,
+    }
+
+
+    emailjs.send('service_2td4316', 'template_h7boeyc', templateParams, 'dkMvJ_Mm6jXkEKkIu')
+      .then((result) => {
+        console.log(result.text);
+        setFirstName('');
+        setCompany('');
+        setEmail('');
+        setPhone('');
+        setService('');
+        setMessage('');
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -44,16 +80,22 @@ const Contact = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              onSubmit={sendEmail}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
               <h3 className="text-4xl text-accent">Vamos Transformar Ideias!</h3>
               <p className="text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="nome" />
-                <Input type="company" placeholder="empresa" />
-                <Input type="email" placeholder="email" />
-                <Input type="phone" placeholder="whatsapp" />
+                <Input type="text" placeholder="nome" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                <Input type="text" placeholder="empresa" value={company} onChange={(e) => setCompany(e.target.value)} />
+                <Input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Input type="text" placeholder="whatsapp" value={phone} onChange={(e) => setPhone(e.target.value)} />
               </div>
-              <Select>
+              <Select
+                onValueChange={(value) =>
+                  setService(value)}
+                value={service}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="serviço" />
                 </SelectTrigger>
@@ -70,6 +112,8 @@ const Contact = () => {
               <Textarea
                 className="h-[200px]"
                 placeholder="mensagem"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
               <Button size="md" className="max-w-40">Enviar</Button>
 
@@ -90,12 +134,12 @@ const Contact = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-white/80">{item.title}</p>
-                      <h3
+                      <a
                         href="{item.href}"
                         className={`text-xl ${item.href != "" ? 'hover:text-accent cursor-pointer' : 'pointer-events-none cursor-default'}`}
                       >
                         {item.description}
-                      </h3>
+                      </a>
                     </div>
                   </li>
                 )
