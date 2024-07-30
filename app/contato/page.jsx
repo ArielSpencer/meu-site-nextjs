@@ -53,7 +53,6 @@ const Contact = () => {
       message: message,
     }
 
-
     emailjs.send('service_2td4316', 'template_h7boeyc', templateParams, 'dkMvJ_Mm6jXkEKkIu')
       .then((result) => {
         console.log(result.text);
@@ -87,15 +86,44 @@ const Contact = () => {
               <h3 className="text-4xl text-accent">Vamos Transformar Ideias!</h3>
               <p className="text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" placeholder="nome" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                <Input type="text" placeholder="empresa" value={company} onChange={(e) => setCompany(e.target.value)} />
-                <Input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <Input type="text" placeholder="whatsapp" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                <Input
+                  type="text"
+                  placeholder="nome"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  minlength="3"
+                  required
+                />
+                <Input
+                  type="text"
+                  placeholder="empresa"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  minlength="3"
+                />
+                <Input
+                  type="email"
+                  placeholder="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  minlength="5"
+                  required
+                />
+                <Input
+                  type="text"
+                  placeholder="whatsapp"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  minlength="10"
+                  maxlength="18"
+                  required
+                />
               </div>
               <Select
                 onValueChange={(value) =>
                   setService(value)}
-                value={service}>
+                value={service}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="serviço" />
                 </SelectTrigger>
@@ -114,6 +142,8 @@ const Contact = () => {
                 placeholder="mensagem"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                minlength="3"
+                required
               />
               <Button size="md" className="max-w-40">Enviar</Button>
 
