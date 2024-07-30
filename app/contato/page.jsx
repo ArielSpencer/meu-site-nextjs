@@ -40,6 +40,7 @@ const Contact = () => {
   const [phone, setPhone] = useState('');
   const [service, setService] = useState('');
   const [message, setMessage] = useState('');
+  const [successMessageVisible, setSuccessMessageVisible] = useState(false);
 
   const sendEmail = (event) => {
     event.preventDefault();
@@ -55,7 +56,7 @@ const Contact = () => {
 
     emailjs.send('service_2td4316', 'template_h7boeyc', templateParams, 'dkMvJ_Mm6jXkEKkIu')
       .then((result) => {
-        console.log(result.text);
+        setSuccessMessageVisible(true);
         setFirstName('');
         setCompany('');
         setEmail('');
@@ -63,7 +64,7 @@ const Contact = () => {
         setService('');
         setMessage('');
       }, (error) => {
-        console.log(error.text);
+        alert(error.text);
       });
   };
 
@@ -84,7 +85,7 @@ const Contact = () => {
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
             >
               <h3 className="text-4xl text-accent">Vamos Transformar Ideias!</h3>
-              <p className="text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="text-white/80">Me conte sobre seu projeto no campo mensagem:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   type="text"
@@ -145,7 +146,17 @@ const Contact = () => {
                 minlength="3"
                 required
               />
-              <Button size="md" className="max-w-40">Enviar</Button>
+              <div
+                className="flex flex-row justify-left items-center gap-[30px]"
+              >
+                <Button
+                  size="md"
+                  className="max-w-40"
+                >
+                  Enviar
+                </Button>
+                <p className={successMessageVisible ? "text-sm" : "hidden"}>Mensagem enviada com sucesso! <br />Em breve estrarei em contato.</p>
+              </div>
 
             </form>
           </div>
@@ -178,7 +189,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </motion.section >
   )
 }
 
