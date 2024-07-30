@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsArrowUpRight, BsGithub, BsBehance } from "react-icons/bs";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -19,44 +19,69 @@ const projects = [
   {
     num: "01",
     category: "frontend",
-    title: "project 1",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit accumsan odio ut eleifend. Vivamus tincidunt malesuada augue quis blandit.",
+    title: "Fokus Pomodoro",
+    description: "Bem-vindo ao Fokus Pomodoro, uma ferramenta de produtividade com a técnica Pomodoro. Inclui uma lista de tarefas para priorizar o que é mais importante.",
     stack: [
+      { name: "javascript" },
       { name: "html 5" },
       { name: "css 3" },
-      { name: "javascript" },
     ],
-    image: "/assets/portfolio/o-clube-do-rh-tumb.png",
-    live: "",
-    github: "",
+    image: "/assets/portfolio/app-fokus-pomodoro-desenvolvido-por-ariel-spencer.webp",
+    imageAlt: "app fokus pomodoro desenvolvido por ariel spencer",
+    live: "https://pomodoro.arielspencer.com.br/",
+    repository: "https://github.com/ArielSpencer/fokus-pomodoro/",
+    favorite: "true",
   },
   {
     num: "02",
-    category: "frontend",
-    title: "project 2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit accumsan odio ut eleifend. Vivamus tincidunt malesuada augue quis blandit.",
+    category: "wordpress",
+    title: "Estima Nutrição",
+    description: "A Estima Nutrição é uma empresa especializada em atendimento nutricional que visa melhorar a qualidade de vida e o bem-estar das pessoas por meio da alimentação.",
     stack: [
+      { name: "ux" },
+      { name: "elementor" },
       { name: "html 5" },
       { name: "css 3" },
-      { name: "javascript" },
     ],
-    image: "/assets/portfolio/o-clube-do-rh-tumb.png",
-    live: "",
-    github: "",
+    image: "/assets/portfolio/site-estima-nutricao-desenvolvido-por-ariel-spencer.webp",
+    imageAlt: "site estima nutrição desenvolvido por ariel spencer",
+    live: "https://estimanutricao.com.br/",
+    repository: "https://www.behance.net/gallery/143522415/Estima-Nutricao/",
+    favorite: "true",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit accumsan odio ut eleifend. Vivamus tincidunt malesuada augue quis blandit.",
+    category: "wordpress",
+    title: "Walljobs",
+    description: "O Clube do RH é uma iniciativa do grupo WallJobs para criar uma comunidade entre os profissionais do RH, mantendo-os informados com cursos, notícias e eventos.",
     stack: [
       { name: "html 5" },
       { name: "css 3" },
-      { name: "javascript" },
+      { name: "elementor" },
+      { name: "learndash" },
     ],
-    image: "/assets/portfolio/o-clube-do-rh-tumb.png",
-    live: "",
-    github: "",
+    image: "/assets/portfolio/site-walljobs-desenvolvido-por-ariel-spencer.png",
+    imageAlt: "site dc beauty studio desenvolvido por ariel spencer",
+    live: "https://in.walljobs.com.br/",
+    repository: "https://www.behance.net/gallery/143950669/O-Clube-do-RH/",
+    favorite: "true",
+  },
+  {
+    num: "04",
+    category: "wordpress",
+    title: "DC Beauty Studio",
+    description: "Visando uma experiência intuitiva. O site oferece um sistema de agendamento de serviços e a organização de agenda funcional para os clientes e colaboradores.",
+    stack: [
+      { name: "html 5" },
+      { name: "css 3" },
+      { name: "divi" },
+      { name: "bookly" },
+    ],
+    image: "/assets/portfolio/site-dc-beauty-studio-desenvolvido-por-ariel-spencer.png",
+    imageAlt: "site dc beauty studio desenvolvido por ariel spencer",
+    live: "https://dcbeautystudio.com.br/",
+    repository: "",
+    favorite: "true",
   },
 ];
 
@@ -68,6 +93,9 @@ const Portfolio = () => {
     const currentIndex = swiper.activeIndex;
     setProject(projects[currentIndex]);
   }
+
+  const IconRepository = project.category === "wordpress" ? BsBehance : BsGithub;
+  const hiddenRepository = project.repository === "" ? "hidden" : "";
 
   return (
     <motion.section
@@ -82,7 +110,7 @@ const Portfolio = () => {
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[30px] h-[50%]">
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+              <div className="text-5xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
@@ -96,10 +124,10 @@ const Portfolio = () => {
                   return (
                     <li
                       key={index}
-                      className="text-xl text-accent uppercase"
+                      className="text-accent uppercase"
                     >
                       {item.name}
-                      {index !== project.stack.length - 1 && ","}
+                      {index !== project.stack.length - 1 && " ·"}
                     </li>
                   )
                 })}
@@ -118,25 +146,28 @@ const Portfolio = () => {
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>
-                          Live project
+                          projeto
                         </p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                <Link href={project.github}>
+                <Link
+                  href={project.repository}
+                  className={hiddenRepository}
+                >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
                         className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group"
                       >
-                        <BsGithub
+                        <IconRepository
                           className="text-white text-3xl group-hover:text-accent"
                         />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>
-                          GitHub repository
+                          repositório
                         </p>
                       </TooltipContent>
                     </Tooltip>
@@ -162,7 +193,7 @@ const Portfolio = () => {
                       <div className="absolute top-0 buttom-0 w-full bg-black/10 z-10">
                       </div>
                       <div className="relative w-full h-full">
-                        <Image src={project.image} fill className="object-cover" alt="" />
+                        <Image src={project.image} fill className="object-cover object-top" alt={project.imageAlt} />
                       </div>
                     </div>
                   </SwiperSlide>
