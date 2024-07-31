@@ -193,7 +193,13 @@ const Portfolio = () => {
                       <div className="absolute top-0 buttom-0 w-full bg-black/10 z-10">
                       </div>
                       <div className="relative w-full h-full">
-                        <Image src={project.image} fill className="object-cover object-top" alt={project.imageAlt} />
+                        <Image
+                          src={project.image}
+                          fill
+                          className="object-cover object-top"
+                          alt={project.imageAlt}
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 960px) 33vw, 25vw"
+                        />
                       </div>
                     </div>
                   </SwiperSlide>
