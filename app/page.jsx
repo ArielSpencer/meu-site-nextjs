@@ -48,7 +48,10 @@ const Home = () => {
           </div>
 
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <Photo />
+            <Photo
+              src="/assets/ariel-spencer-developer-front-end.webp"
+              alt="Ariel Spencer Desenvolvedor Front-End"
+            />
           </div>
 
         </div>
