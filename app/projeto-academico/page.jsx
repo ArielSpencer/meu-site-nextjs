@@ -42,7 +42,12 @@ const ProjetoAcademico = () => {
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [position, setPosition] = useState('');
   const [service, setService] = useState('');
+  const [dataLog, setDataLog] = useState('');
+  const [dailyUse, setDayUse] = useState('');
+  const [growthExp, setGrowthExp] = useState('');
+  const [challenge, setChallenge] = useState('');
   const [message, setMessage] = useState('');
   const [successMessageVisible, setSuccessMessageVisible] = useState(false);
 
@@ -54,7 +59,12 @@ const ProjetoAcademico = () => {
       company: company,
       email: email,
       phone: phone,
+      position: position,
       service: service,
+      data_log: dataLog,
+      day_use: dailyUse,
+      growth_expectations: growthExp,
+      challenge: challenge,
       message: message,
     }
 
@@ -65,7 +75,12 @@ const ProjetoAcademico = () => {
         setCompany('');
         setEmail('');
         setPhone('');
+        setPosition('');
         setService('');
+        setDataLog('');
+        setDayUse('');
+        setGrowthExp('');
+        setChallenge('');
         setMessage('');
       }, (error) => {
         alert(error.text);
@@ -106,7 +121,7 @@ const ProjetoAcademico = () => {
         </div>
       </div>
 
-      <div className="container mx-auto">
+      <div className="container mx-auto pb-20">
         <div className="flex flex-col items-center gap-[30px]">
           <div className="flex-1 flex flex-col gap-12 items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <div className="h-[80vh] flex flex-col justify-center gap-8 text-white/80">
@@ -161,7 +176,7 @@ const ProjetoAcademico = () => {
             className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
           >
             <h3 className="text-2xl text-accent">Inscreva-se para participar da seletiva</h3>
-            <p className="text-white/80">Me conte sobre seu projeto no campo mensagem:</p>
+            <p className="text-xl text-white/80 pt-10">Como podemos entrar em contato com você:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
                 type="text"
@@ -195,28 +210,77 @@ const ProjetoAcademico = () => {
                 maxlength="18"
                 required
               />
+              <Input
+                type="text"
+                placeholder="Qual seu cargo na empresa?"
+                value={position}
+                onChange={(e) => setPosition(e.target.value)}
+                minlength="3"
+                maxlength="30"
+                required
+              />
+              <Select
+                onValueChange={(value) =>
+                  setService(value)}
+                value={service}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Como ficou sabendo de nossa iniciativa?" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Selecione</SelectLabel>
+                    <SelectItem value="linkedin">Linkedin</SelectItem>
+                    <SelectItem value="instagram">Instagram</SelectItem>
+                    <SelectItem value="indicação">Indicação</SelectItem>
+                    <SelectItem value="outros">Outro</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </div>
-            <Select
-              onValueChange={(value) =>
-                setService(value)}
-              value={service}
-            >
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Como ficou sabendo de nossa iniciativa?" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Selecione</SelectLabel>
-                  <SelectItem value="linkedin">Linkedin</SelectItem>
-                  <SelectItem value="instagram">Instagram</SelectItem>
-                  <SelectItem value="indicação">Indicação</SelectItem>
-                  <SelectItem value="outros">Outro</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <p className="text-xl text-white/80 pt-10">Conte sobre seu projeto:</p>
+            <div className="grid grid-cols-1 gap-6">
+              <Input
+                type="text"
+                placeholder="Quais tipos de dados você precisa armazenar? (ex. clientes, estoque, pedidos)"
+                value={dataLog}
+                onChange={(e) => setDataLog(e.target.value)}
+                minlength="10"
+                maxlength="18"
+                required
+              />
+              <Input
+                type="text"
+                placeholder="Como os dados serão usados no dia a dia do seu negócio?"
+                value={dailyUse}
+                onChange={(e) => setDayUse(e.target.value)}
+                minlength="10"
+                maxlength="18"
+                required
+              />
+              <Input
+                type="text"
+                placeholder="Quais são as expectativas de crescimento do seu banco de dados?"
+                value={growthExp}
+                onChange={(e) => setGrowthExp(e.target.value)}
+                minlength="10"
+                maxlength="18"
+                required
+              />
+              <Input
+                type="text"
+                placeholder="Quais principais dificuldades você enfrenta com dados?"
+                value={challenge}
+                onChange={(e) => setChallenge(e.target.value)}
+                minlength="10"
+                maxlength="18"
+                required
+              />
+            </div>
+            <p className="text-xl text-white/80 pt-10">Conte um pouco mais sobre sua empresa:</p>
             <Textarea
               className="h-[200px]"
-              placeholder="Conte um pouco mais sobre sua empresa"
+              placeholder="..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               minlength="3"
@@ -236,7 +300,7 @@ const ProjetoAcademico = () => {
           </form>
         </div>
       </div>
-      <footer className="text-center"><p>Ao se cadastrar termos e etc...</p></footer>
+      <footer className="text-center cursor-pointer"><p>Ao se cadastrar você concorda com as disposições destes <Rel tp>termos e condições de uso de dados</Rel>.</p></footer>
     </motion.section >
   )
 }
