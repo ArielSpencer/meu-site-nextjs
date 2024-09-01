@@ -5,13 +5,14 @@ import Image from "next/image";
 
 const Photo = ({ src, alt }) => {
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 2, duration: 0.4, ease: 'easeIn' },
         }}
+        className="relative flex items-center justify-center"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -19,8 +20,8 @@ const Photo = ({ src, alt }) => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
-
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
+          className="w-[290px] h-[290px] xl:w-[490px] xl:h-[490px] absolute flex items-center justify-center"
+        >
           <Image
             src={src}
             priority
@@ -41,7 +42,7 @@ const Photo = ({ src, alt }) => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#00FF99"
+            stroke="#916F5F"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"

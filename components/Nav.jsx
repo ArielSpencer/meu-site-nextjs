@@ -40,8 +40,8 @@ const Nav = () => {
       {navLinks.map((link) => {
         return (
           <Link href={link.path} key={link.id}
-            className={`${link.path === pathname && "text-accent border-b-2 border-accent"}
-            capitalize font-medium hover:text-accent translation-all`}>
+            className={`${link.path === pathname && "text-accent dark:text-accent-dark border-b-2 border-accent dark:border-accent-dark"}
+            capitalize font-medium hover:text-accent dark:hover:text-accent-hover translation-all`}>
             {link.name}
           </Link>
         )

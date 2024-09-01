@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-loose relative;
+    @apply font-primary leading-loose relative bg-primary dark:bg-primary-dark text-writing dark:text-writing-dark;
   }
 
   .h1 {
@@ -24,13 +24,13 @@
   }
 
   .text-outline-hover {
-    -webkit-text-stroke: 1px #00ff99;
+    -webkit-text-stroke: 1px #A76F1F;
   }
 
   body::before {
     content: "";
     position: absolute;
-    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(0, 255, 153, 0.06), transparent 40%);
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(98, 93, 92, 0.08), transparent 40%);
     border-radius: inherit;
     height: 100%;
     width: 100%;

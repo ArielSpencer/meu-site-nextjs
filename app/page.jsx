@@ -15,11 +15,11 @@ const Home = () => {
               Olá, sou Ariel Spencer.
             </span>
             <h1 className="h1 mb-6">
-              Desenvolvedor <br /><span className="text-accent">Front-end</span>
+              Desenvolvedor <br /><span className="text-accent dark:text-accent-dark">Front-end</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
-              Focado em <Rel tp>ReactJS</Rel>, <Rel tp>HTML</Rel> e <Rel tp>CSS</Rel>,
-              especializado em <Rel tp>UX Design</Rel>, com experiência em <Rel tp>Marketing Digital</Rel>, <Rel tp>SEO</Rel> e <Rel tp>SEM</Rel>.
+            <p className="max-w-[500px] mb-9">
+              Focado em <Rel>ReactJS</Rel>, <Rel>HTML</Rel> e <Rel>CSS</Rel>,
+              especializado em <Rel>UX Design</Rel>, com experiência em <Rel>Marketing Digital</Rel>, <Rel>SEO</Rel> e <Rel>SEM</Rel>.
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8">
@@ -41,7 +41,7 @@ const Home = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconsStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  iconsStyles="w-9 h-9 border border-accent dark:border-accent-dark dark:hover:border-accent-darkhover rounded-full flex justify-center items-center text-accent-dark text-base hover:bg-accent dark:hover:bg-accent-darkhover hover:text-primary dark:hover:text-primary-dark hover:transition-all duration-500"
                 />
               </div>
             </div>
