@@ -20,11 +20,19 @@
   }
 
   .text-outline {
-    -webkit-text-stroke: 1px #FFFFFF;
+    -webkit-text-stroke: 1px #272735;
+  }
+
+  .text-dark-outline {
+    -webkit-text-stroke: 1px #916F5F;
   }
 
   .text-outline-hover {
     -webkit-text-stroke: 1px #A76F1F;
+  }
+
+  .text-dark-outline-hover {
+    -webkit-text-stroke: 1px #E4D6C4;
   }
 
   body::before {
