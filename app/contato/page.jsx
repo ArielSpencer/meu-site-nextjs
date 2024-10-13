@@ -92,7 +92,7 @@ const Contact = () => {
                   placeholder="nome"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  minlength="3"
+                  minLength="3"
                   required
                 />
                 <Input
@@ -100,14 +100,14 @@ const Contact = () => {
                   placeholder="empresa"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
-                  minlength="3"
+                  minLength="3"
                 />
                 <Input
                   type="email"
                   placeholder="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  minlength="5"
+                  minLength="5"
                   required
                 />
                 <Input
@@ -115,8 +115,8 @@ const Contact = () => {
                   placeholder="whatsapp"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  minlength="10"
-                  maxlength="18"
+                  minLength="10"
+                  maxLength="18"
                   required
                 />
               </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                 placeholder="mensagem"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                minlength="3"
+                minLength="3"
                 required
               />
               <div
