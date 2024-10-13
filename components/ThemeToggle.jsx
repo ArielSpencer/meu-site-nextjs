@@ -6,18 +6,20 @@ import { FaMoon } from "react-icons/fa";
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(() => {
-    const theme = localStorage.getItem("theme");
-    return theme === "dark";
+    if (typeof window !== 'undefined') {
+      const theme = localStorage.getItem("theme");
+      return theme === "dark";
+    }
+    return false;
   });
 
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
     }
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
   return (
