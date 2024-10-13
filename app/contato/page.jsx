@@ -174,7 +174,7 @@ const Contact = () => {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-white/80">{item.title}</p>
+                      <p className="text-accent/80">{item.title}</p>
                       <a
                         href="{item.href}"
                         className={`text-xl ${item.href != "" ? 'hover:text-accent cursor-pointer' : 'pointer-events-none cursor-default'}`}
