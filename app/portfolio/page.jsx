@@ -104,7 +104,7 @@ const Portfolio = () => {
         opacity: 1,
         transition: { delay: 1, duration: 0.4, ease: "easeInOut" }
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0"
+      className="h-[100vh] flex flex-col justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
