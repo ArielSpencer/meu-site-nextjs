@@ -241,7 +241,7 @@ const About = () => {
             <TabsContent value="resume" className="w-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{resume.title}</h3>
-                <div key={resume.id} className="max-w-[620px] text-white/60 mx-auto xl:mx-0">
+                <div key={resume.id} className="max-w-[620px] text-/60 mx-auto xl:mx-0 text-writing/60 dark:text-writing-dark/60">
                   {resume.description.map((description) => {
                     return (
                       <TooltipProvider key={description.id} delayDuration={100}>
@@ -274,7 +274,7 @@ const About = () => {
                   {resume.info.map((info) => {
                     return (
                       <li key={info.id} className="flex items-center justify-center xl:justify-start gap-3">
-                        <span className="text-white/60">{info.fieldName}</span>
+                        <span className="text-writing/60 dark:text-writing-dark/60">{info.fieldName}</span>
                         <a href={info.href} className={`${info.href != "" ? 'hover:text-accent cursor-pointer' : 'pointer-events-none cursor-default'}`}>
                           {info.fieldValue}
                         </a>
@@ -293,7 +293,7 @@ const About = () => {
                   <h3 className="text-4xl font-bold">
                     {skills.title}
                   </h3>
-                  <p className="text-white/60 mx-auto xl:mx-0">
+                  <p className="text-writing/60 dark:text-writing-dark/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>
@@ -306,7 +306,7 @@ const About = () => {
                             <Tooltip>
 
                               <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl group">
-                                <div className='flex flex-col gap-3 justify-center items-center group-hover:text-accent transition-all duration-300'>
+                                <div className='flex flex-col gap-3 justify-center items-center text-writing-dark hover:text-accent/80 transition-all duration-300'>
                                   <div className="text-4xl">
                                     {skill.icon}
                                   </div>
@@ -334,7 +334,7 @@ const About = () => {
                 <h3 className='text-4xl font-bold'>
                   {education.title}
                 </h3>
-                <p className='text-white/60 mx-auto xl:mx-0'>
+                <p className='text-writing/60 dark:text-writing-dark/60 mx-auto xl:mx-0'>
                   {education.description}
                 </p>
                 <ScrollArea className="xl:h-[600px]">
@@ -348,7 +348,7 @@ const About = () => {
                           <span className="text-accent">
                             {education.duration}
                           </span>
-                          <h3 className='text-xl max-w-[2] min-h-[80px] text-center lg:text-left'>
+                          <h3 className='text-xl max-w-[2] min-h-[80px] text-center lg:text-left text-white/80'>
                             {education.degree}
                           </h3>
                           <div className="flex items-center gap-3">
@@ -373,7 +373,7 @@ const About = () => {
                 <h3 className='text-4xl font-bold'>
                   {experience.title}
                 </h3>
-                <p className='text-white/60 mx-auto xl:mx-0'>
+                <p className='text-writing/60 dark:text-writing-dark/60 mx-auto xl:mx-0'>
                   {experience.description}
                 </p>
                 <ScrollArea className="xl:h-[600px]">
@@ -387,7 +387,7 @@ const About = () => {
                           <span className="text-accent">
                             {experience.duration}
                           </span>
-                          <h3 className='text-xl max-w-[2] min-h-[80px] text-center lg:text-left'>
+                          <h3 className='text-xl max-w-[2] min-h-[80px] text-center lg:text-left text-white/80'>
                             {experience.position}
                           </h3>
                           <div className="flex items-center gap-3">

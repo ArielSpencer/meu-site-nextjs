@@ -113,10 +113,10 @@ const Portfolio = () => {
               <div className="text-5xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-[42px] font-bold leading-none text-writing dark:text-writing-dark group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category} project
               </h2>
-              <p className="text-white/80">
+              <p className="text-writing/80 dark:text-writing-dark/80">
                 {project.description}
               </p>
               <ul className="flex gap-4">
@@ -132,16 +132,16 @@ const Portfolio = () => {
                   )
                 })}
               </ul>
-              <div className="border border-white/20"></div>
+              <div className="border border-writing/60 dark:border-writing-dark/60"></div>
               <div className="flex items-center gap-4">
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
-                        className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group"
+                        className="w-[70px] h-[70px] rounded-full bg-writing/10 dark:bg-writing-dark/5 flex justify-center items-center group"
                       >
                         <BsArrowUpRight
-                          className="text-white text-3xl group-hover:text-accent"
+                          className="text-writing/60 dark:text-writing-dark/60 text-3xl group-hover:text-accent"
                         />
                       </TooltipTrigger>
                       <TooltipContent>
@@ -159,10 +159,10 @@ const Portfolio = () => {
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger
-                        className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group"
+                        className="w-[70px] h-[70px] rounded-full bg-writing/10 dark:bg-writing-dark/5 flex justify-center items-center group"
                       >
                         <IconRepository
-                          className="text-white text-3xl group-hover:text-accent"
+                          className="text-writing/60 dark:text-writing-dark/60 text-3xl group-hover:text-accent"
                         />
                       </TooltipTrigger>
                       <TooltipContent>

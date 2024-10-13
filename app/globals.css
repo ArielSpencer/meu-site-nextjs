@@ -20,7 +20,7 @@
   }
 
   .text-outline {
-    -webkit-text-stroke: 1px #272735;
+    -webkit-text-stroke: 1px #A76F1F;
   }
 
   .text-dark-outline {
@@ -28,7 +28,7 @@
   }
 
   .text-outline-hover {
-    -webkit-text-stroke: 1px #A76F1F;
+    -webkit-text-stroke: 1px #916F5F;
   }
 
   .text-dark-outline-hover {
