@@ -557,7 +557,7 @@ const BriefingLandingPage = () => {
       case 'texto_apresentacao':
         return (
           <div key={field}>
-            <label className="text-white/90 block mb-2">15. Você possui algum texto de apresentação pronto? (opcional)</label>
+            <label className="text-white/90 block mb-2">15. Você possui algum texto de apresentação pronto?</label>
             <Textarea
               placeholder="Se já tem um texto sobre você ou sua empresa, cole aqui..."
               value={formData[field]}
