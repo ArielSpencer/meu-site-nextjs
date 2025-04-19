@@ -514,7 +514,7 @@ const BriefingLandingPage = () => {
                 'Valores/preços',
                 'FAQ (perguntas frequentes)'
               ].map(secao => (
-                <label key={secao} className="flex items-center space-x-2 text-sm">
+                <label key={secao} className="flex items-center space-x-2 text-sm text-white">
                   <input
                     type="checkbox"
                     checked={formData[field].includes(secao)}
