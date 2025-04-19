@@ -111,7 +111,7 @@ const BriefingLandingPage = () => {
     }
   }, [formData, currentStep, submitted]);
 
-  const getFieldClassName = (field, baseClassName = "w-full") => {
+  const getFieldClassName = (field, baseClassName = "w-full text-white") => {
     const isMissing = showValidationErrors && missingFields.includes(field);
     return isMissing ? `${baseClassName} border-2 border-orange-500 bg-orange-100/10` : baseClassName;
   };
@@ -328,7 +328,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: 10 anos de experiência, metodologia própria, garantia de resultados..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -355,7 +355,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: Falta de visibilidade para vendas online, dificuldade em atrair clientes qualificados..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -379,7 +379,7 @@ const BriefingLandingPage = () => {
             </Select>
             {formData[field] === 'outro' && (
               <Input
-                className="w-full mt-2"
+                className="w-full mt-2 text-white"
                 placeholder="Especifique qual outro objetivo..."
                 value={formData.objetivo_principal_outro || ''}
                 onChange={(e) => updateField('objetivo_principal_outro', e.target.value)}
@@ -410,7 +410,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: Instagram, Google Ads, Facebook Ads, indicações, email marketing..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -440,7 +440,7 @@ const BriefingLandingPage = () => {
               type="file"
               accept=".png"
               onChange={(e) => updateField(field, e.target.files?.[0]?.name || '')}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -477,7 +477,7 @@ const BriefingLandingPage = () => {
             </Select>
             {formData[field] === 'outro' && (
               <Input
-                className="w-full mt-2"
+                className="w-full mt-2 text-white"
                 placeholder="Especifique qual estilo..."
                 value={formData.estilo_visual_outro || ''}
                 onChange={(e) => updateField('estilo_visual_outro', e.target.value)}
@@ -494,7 +494,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: JetBrains, Montserrat, Roboto, Open Sans..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -532,7 +532,7 @@ const BriefingLandingPage = () => {
               ))}
             </div>
             <Input
-              className="w-full"
+              className="w-full text-white"
               placeholder="Outras seções que não estão listadas..."
               value={formData.outras_secoes || ''}
               onChange={(e) => updateField('outras_secoes', e.target.value)}
@@ -562,7 +562,7 @@ const BriefingLandingPage = () => {
               placeholder="Se já tem um texto sobre você ou sua empresa, cole aqui..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -575,7 +575,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: +500 clientes atendidos, 95% de satisfação, prêmios recebidos..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -585,7 +585,7 @@ const BriefingLandingPage = () => {
           <div key={field}>
             <label className="text-white/90 block mb-2">17. Você tem depoimentos de clientes para usar?</label>
             <Textarea
-              className="h-[150px] w-full"
+              className="h-[150px] w-full text-white"
               placeholder="Liste todos os depoimentos, incluindo nome do cliente e resultado obtido..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
@@ -598,7 +598,7 @@ const BriefingLandingPage = () => {
           <div key={field}>
             <label className="text-white/90 block mb-2">18. Tem cases de sucesso específicos para destacar?</label>
             <Textarea
-              className="h-[150px] w-full"
+              className="h-[150px] w-full text-white"
               placeholder="Descreva casos específicos de clientes e os resultados alcançados..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
@@ -624,7 +624,7 @@ const BriefingLandingPage = () => {
             </Select>
             {formData[field] === 'outro' && (
               <Input
-                className="w-full mt-2"
+                className="w-full mt-2 text-white"
                 placeholder="Especifique que tipo de formulário..."
                 value={formData.tipo_formulario_outro || ''}
                 onChange={(e) => updateField('tipo_formulario_outro', e.target.value)}
@@ -641,7 +641,7 @@ const BriefingLandingPage = () => {
               placeholder="https://calendly.com/seunome ou outro link"
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -670,7 +670,7 @@ const BriefingLandingPage = () => {
               placeholder="Cole os links dos sites que gosta e explique o que mais gosta neles..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -683,7 +683,7 @@ const BriefingLandingPage = () => {
               placeholder="Links de concorrentes e o que gosta/não gosta em cada um..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -706,7 +706,7 @@ const BriefingLandingPage = () => {
             </Select>
             {formData[field] === 'outro' && (
               <Input
-                className="w-full mt-2"
+                className="w-full mt-2 text-white"
                 placeholder="Especifique qual seu tom de comunicação..."
                 value={formData.tom_comunicacao_outro || ''}
                 onChange={(e) => updateField('tom_comunicacao_outro', e.target.value)}
@@ -723,7 +723,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: www.seusite.com.br"
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -736,7 +736,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: contato@seusite.com.br"
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -749,7 +749,7 @@ const BriefingLandingPage = () => {
               placeholder="Liste suas redes sociais que gostaria de integração: @arielspencer.dev, linkedin.com/in/seuperfil..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -762,7 +762,7 @@ const BriefingLandingPage = () => {
               placeholder="Ex: chat online, blog, quiz, área de membros..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
-              className="w-full"
+              className="w-full text-white"
             />
           </div>
         );
@@ -772,7 +772,7 @@ const BriefingLandingPage = () => {
           <div key={field}>
             <label className="text-white/90 block mb-2">29. Observações adicionais (dúvidas ou algo importante que não foi perguntado):</label>
             <Textarea
-              className="h-[150px] w-full"
+              className="h-[150px] w-full text-white"
               placeholder="Qualquer informação adicional que considere importante para o projeto..."
               value={formData[field]}
               onChange={(e) => updateField(field, e.target.value)}
@@ -826,11 +826,10 @@ const BriefingLandingPage = () => {
                   Vamos criar a landing page perfeita para o seu negócio!
                 </p>
                 <p className="text-white/60 text-sm mb-1">
-                  Tempo médio: 15-25 minutos | * Campos obrigatórios
-                  
+                  Tempo médio: 15-25 minutos | Progresso salvo automaticamente
                 </p>
                 <p className="text-white/60 text-xs">
-                  {/* | Progresso salvo automaticamente */}
+                  * Campos obrigatórios
                 </p>
               </div>
 
