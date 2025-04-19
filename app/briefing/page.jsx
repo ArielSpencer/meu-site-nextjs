@@ -186,10 +186,44 @@ const BriefingLandingPage = () => {
     const templateParams = {
       nome: formData.nome,
       email: formData.email,
-      briefing_data: JSON.stringify(formData, null, 2)
+      descricao_negocio: formData.descricao_negocio,
+      servicos: formData.servicos,
+      diferencial: formData.diferencial,
+      publico_alvo: formData.publico_alvo,
+      problema_resolve: formData.problema_resolve,
+      objetivo_principal: formData.objetivo_principal,
+      acao_visitante: formData.acao_visitante,
+      divulgacao: formData.divulgacao,
+      tem_logo: formData.tem_logo,
+      logo_file: formData.logo_file,
+      cores_marca: formData.cores_marca,
+      estilo_visual: formData.estilo_visual,
+      tipografia: formData.tipografia,
+      secoes: Array.isArray(formData.secoes) ? formData.secoes.join(', ') : formData.secoes,
+      como_chamar: formData.como_chamar,
+      texto_apresentacao: formData.texto_apresentacao,
+      resultados_conquistas: formData.resultados_conquistas,
+      depoimentos: formData.depoimentos,
+      cases_sucesso: formData.cases_sucesso,
+      tipo_formulario: formData.tipo_formulario,
+      link_agendamento: formData.link_agendamento,
+      integracao_whatsapp: formData.integracao_whatsapp,
+      site_referencia: formData.site_referencia,
+      site_concorrente: formData.site_concorrente,
+      tom_comunicacao: formData.tom_comunicacao,
+      dominio: formData.dominio,
+      email_profissional: formData.email_profissional,
+      redes_sociais: formData.redes_sociais,
+      funcionalidade_especial: formData.funcionalidade_especial,
+      observacoes: formData.observacoes
     };
 
-    emailjs.send('service_2td4316', 'template_h7boeyc', templateParams, 'dkMvJ_Mm6jXkEKkIu')
+    emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    )
       .then((result) => {
         setSubmitted(true);
         localStorage.removeItem('briefing-progress');
